@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderAmount: 9.99
+  orderShipName: MyString
+  orderShipAddress1: MyString
+  orderShipAddress2: MyString
+  orderCity: MyString
+  orderProvince: MyString
+  orderPostal: MyString
+  orderCountry: MyString
+  orderPhone: MyString
+  orderEmail: MyString
+  orderDate: 2017-11-04 18:40:59
+  orderTax: 9.99
+
+two:
+  orderAmount: 9.99
+  orderShipName: MyString
+  orderShipAddress1: MyString
+  orderShipAddress2: MyString
+  orderCity: MyString
+  orderProvince: MyString
+  orderPostal: MyString
+  orderCountry: MyString
+  orderPhone: MyString
+  orderEmail: MyString
+  orderDate: 2017-11-04 18:40:59
+  orderTax: 9.99
