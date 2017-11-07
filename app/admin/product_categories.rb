@@ -1,4 +1,4 @@
 ActiveAdmin.register ProductCategory do
-  permit_params :categoryName
+  permit_params :name
 
 end
