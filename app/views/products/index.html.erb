@@ -1,6 +1,8 @@
-<h1>All Products</h1>
+<h3>Products</h3>
 
 
-  <!-- <% @products.each do |product| %>
-  <h2><%= product.productName%></h2>
-  <% end %> -->
+  <% @products.each do |product| %>
+  <h4><b><%= product.productName%></b></h4>
+  <p><%= image_tag product.productImage %></p>
+  <p><%= product.productDescription %></p>
+  <% end %>
