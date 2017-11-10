@@ -1,0 +1,12 @@
+<h3>Products</h3>
+
+
+  <% @products_all.each do |product| %>
+  
+    <% if product.category_id == @item.to_i %>
+      <h4><b><%= product.productName%></b></h4>
+      <p><%= image_tag product.productImage %></p>
+      <p><%= product.productDescription %></p>
+    <% end %>
+
+  <% end %>

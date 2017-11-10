@@ -12,6 +12,25 @@
     <header>
       <h1>White Curry</h1>
     </header>
+
+    <div id= "menu">
+      <ul>
+        <%= link_to 'all', all_path %>
+        <% @categories_all.each do |category| %>
+          <li><%= link_to category.name, category_path(category.id) %>  </li>
+          <% end %>
+
+      </ul>
+    </div>
+
+    <div id="search_bar">
+      <%= form_tag search_path, method: 'get' do %>
+        <%= text_field_tag :search_keywords %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
+
+
     <%= yield %>
   </body>
 </html>
