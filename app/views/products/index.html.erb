@@ -1,12 +1,3 @@
 <h3>Products</h3>
 
-
-
-
- <table>
-  <% @products_all.each do |product| %>
-  <tr><h4><b><%= product.productName%></b></h4></tr>
-  <tr><p><%= image_tag product.productImage %></p></tr>
-  <tr><p><%= product.productDescription %></p></tr>
-  <% end %>
-</table>
+<%= render partial: "shared/common" %>

@@ -57,3 +57,5 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 
 gem 'kaminari'
+
+gem 'bootstrap-sass'

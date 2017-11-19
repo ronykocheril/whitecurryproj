@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get '/category/:id', to: "products#category", as: 'category', number: /\d+/
   get '/all', to: "products#index"
 
-  get '/search', to: "products#search", as: 'search' 
+  get '/new', to: 'products#new', as: 'new'
+
+  get '/search', to: "products#search", as: 'search'
 
 
   root to: 'products#index'
