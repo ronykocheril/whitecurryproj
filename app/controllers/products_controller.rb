@@ -30,4 +30,10 @@ class ProductsController < ApplicationController
     sale_item_date = (today - 2).to_date
     @new_prods = Product.where("created_at > '#{sale_item_date}'")
   end
+
+  def products_page
+    id = params[:id]
+    @products_all = Product.all.where("id LIKE ?", id)
+
+  end
 end

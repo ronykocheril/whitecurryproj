@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/search', to: "products#search", as: 'search'
 
+  get '/products/:id', to: 'products#products_page', as: 'pp', number: /\d+/
+
 
   root to: 'products#index'
   get 'products/index'
