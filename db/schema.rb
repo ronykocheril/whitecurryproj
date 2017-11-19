@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20171107205804) do
     t.integer "product_category_id"
     t.integer "category_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
   end
 
   create_table "users", force: :cascade do |t|

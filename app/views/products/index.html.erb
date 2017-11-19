@@ -1,3 +1,10 @@
 <h3>Products</h3>
 
-<%= render partial: "shared/common" %>
+<table>
+ <% @products_all.each do |product| %>
+ <tr><p><%= link_to (image_tag product.productImage), pp_path(product.id) %></p></tr>
+ <tr><h4><b><%= link_to product.productName, pp_path(product.id)%></b></h4></tr>
+ <tr><p><%= product.productDescription %></p></tr>
+ <% end %>
+
+</table>
