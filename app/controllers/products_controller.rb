@@ -35,6 +35,5 @@ class ProductsController < ApplicationController
     @categories_all = Category.all
     id = params[:id]
     @products_all = Product.all.where("id LIKE ?", id)
-
   end
 end
