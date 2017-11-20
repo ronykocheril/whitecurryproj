@@ -6,7 +6,7 @@
  <!-- <tr><p><%= product.productDescription %></p></tr> -->
  <% end %>
 
- <%= form_tag search_path, method: 'get' do %>
+ <%= form_tag cart_path, method: 'post' do %>
    <%= submit_tag "Add to cart" %>
  <% end %>
 

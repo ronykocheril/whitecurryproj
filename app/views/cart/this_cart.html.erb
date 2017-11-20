@@ -1,0 +1,25 @@
+Welcome to cart
+
+<table>
+   <tr>
+     <th>Product</th>
+     <th>Qty</th>
+     <th>Unit Price</th>
+     <th>Full Price</th>
+   </tr>
+
+  <% for item in @cart.items %>
+    <tr class="<%= cycle :odd, :even %>">
+       <td><%=h item.product.name %></td>
+       <td><%= item.quantity %></td>
+       <td><%= gbp(item.unit_price) %></td>
+       <td><%= gbp(item.full_price) %></td>
+    </tr>
+   <% end %>
+ <tr>
+
+  <td colspan="4">
+    Total: <%= gbp(@cart.total_price) %>
+  </td>
+  </tr>
+  </table>
