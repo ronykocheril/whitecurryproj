@@ -59,3 +59,5 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
 
 gem 'bootstrap-sass'
+
+gem 'carrierwave', '~> 1.0'

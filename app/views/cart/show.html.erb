@@ -3,10 +3,10 @@
   <% if @cart.empty?%>
   <p>cart is empty</p>
   <% end %>
-  <% @cart.each do |cart|%>
-   <tr> <td><%= cart.name%></td>
-     <td> <%= cart.quantity%></td>
-     <td><%= button_to "Remove", :method => :post %> </td>
-   </tr>
+
+  <% @cart.each do |hash, value|%>
+   <%= @cart.inspect %>
   <% end %>
+
+
 </table>

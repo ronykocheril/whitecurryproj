@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category
 
-  validates :productName, presence: true
+  validates :name, presence: true
 
 end
