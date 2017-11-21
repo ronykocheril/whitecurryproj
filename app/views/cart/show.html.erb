@@ -1,0 +1,12 @@
+<h2>Your Cart </h2>
+<table>
+  <% if @cart.empty?%>
+  <p>cart is empty</p>
+  <% end %>
+  <% @cart.each do |cart|%>
+   <tr> <td><%= cart.name%></td>
+     <td> <%= cart.quantity%></td>
+     <td><%= button_to "Remove", :method => :post %> </td>
+   </tr>
+  <% end %>
+</table>

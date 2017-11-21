@@ -9,7 +9,7 @@
   <p>No results found </p>
   <% end %>
   <% @found_products.each do |product| %>
-  <tr><h4><b><%= product.productName%></b></h4></tr>
+  <tr><h4><b><%= product.name%></b></h4></tr>
   <tr><p><%= image_tag product.productImage %></p></tr>
   <tr><p><%= product.productDescription %></p></tr>
   <% end %>

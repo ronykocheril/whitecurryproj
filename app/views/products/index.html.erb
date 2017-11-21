@@ -3,7 +3,7 @@
 <table>
  <% @products_all.each do |product| %>
  <tr><%= link_to (image_tag product.productImage), pp_path(product.id) %></tr>
- <tr><h4><b><%= link_to product.productName, pp_path(product.id)%></b></h4></tr>
+ <tr><h4><b><%= link_to product.name, pp_path(product.id)%></b></h4></tr>
  <tr><h5><b> $<%=  product.productPrice%> CAD </b></h5></tr>
 
    <!-- <% if(product.sale_price < product.productPrice )%>
