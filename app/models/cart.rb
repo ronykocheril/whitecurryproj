@@ -2,6 +2,7 @@ class Cart < ApplicationRecord
 has_many :products
 
   def add_item(product_id,quantity)
+
     product = Product.where('id = ?', product_id).first
     cart_item = Cart.where('product_id = ?', product_id).first
     full_price = quantity.to_f * product.productPrice
@@ -15,6 +16,6 @@ has_many :products
     save
   end
 
-  
+
 
 end

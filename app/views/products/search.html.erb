@@ -1,13 +1,10 @@
 <h2>Search Results</h2>
-
-<!--
-<%= render partial: "shared/common",
-           locals: {@products_all => @found_products } %> -->
-
  <table>
+
   <% if @found_products.empty? %>
   <p>No results found </p>
   <% end %>
+  <% else %>
   <% @found_products.each do |product| %>
   <tr><h4><b><%= product.name%></b></h4></tr>
   <tr><p><%= image_tag product.productImage %></p></tr>

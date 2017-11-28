@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   get '/products/:id', to: 'products#products_page', as: 'pp', number: /\d+/
 
-  post '/cart/:id', to: 'cart#this_cart', as: 'cart', number: /\d+/
+  post '/cart/:id' => 'cart#this_cart', as: 'cart'
 
   get '/cart/show', to: 'cart#show', as: 'show'
+
+  post '/cart/destroy/:id', to: 'cart#destroy', as: 'destroy'
 
 
   root to: 'products#index'

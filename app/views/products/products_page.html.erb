@@ -4,7 +4,18 @@
  <tr><h4><b><%= product.name%></b></h4></tr>
  <tr><p><%= image_tag product.productImage %></p></tr>
  <tr><h5><b> $<%= product.productPrice%> CAD</b></h5></tr>
- <tr><%= button_to "Add to Cart", :controller => :cart, :action => :this_cart, :id => product %></tr>
+
+ <% @quantity_array = [] %>
+ <% i = 0 %>
+
+ <% product.productStockQuantity.times { @quantity_array << i+=1} %>
+
+ <%= form_tag cart_path(id: product.id), method: 'post' do %>
+
+    <%= select_tag "quantity", options_for_select(@quantity_array) %>
+    <%= submit_tag "Add to cart" %>
+
+  <% end %>
 
  <% end %>
 

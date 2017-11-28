@@ -1,12 +1,35 @@
 <h2>Your Cart </h2>
 <table>
-  <% if @cart.empty?%>
-  <p>cart is empty</p>
-  <% end %>
 
-  <% @cart.each do |hash, value|%>
-   <%= @cart.inspect %>
+  <% if @mycart.empty? %>
+  <p>Your cart is empty </p>
+
+  <% else %>
+  <% total = 0%>
+  <% prodTotal = 0 %>
+  <% @mycart.each do |val| %>
+
+
+    <% @products_all.each do |product| %>
+      <% if product.id == val['id']%>
+       <tr>
+         <td> <%= product.name %> </td>
+         <td>  <%= val['q'] %> </td>
+         <% prodTotal = val['q'].to_d * product.sale_price %>
+         <td> <%= prodTotal %></td>
+         <% total += prodTotal %>
+         <td> <%= button_to 'Remove from cart', {:controller => "cart", :action => "destroy", :id => val['id']} , :method=>:post  %></td>
+       </tr>
+
+      <% end %>
+
+    <% end %>
+  <% end %>
+  <tr>Total : $<%=total %> CAD</tr>
+
   <% end %>
 
 
 </table>
+
+<%=  button_to 'Proceed to checkout' %>

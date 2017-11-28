@@ -4,16 +4,14 @@
  <% @products_all.each do |product| %>
  <tr><%= link_to (image_tag product.productImage), pp_path(product.id) %></tr>
  <tr><h4><b><%= link_to product.name, pp_path(product.id)%></b></h4></tr>
- <tr><h5><b> $<%=  product.productPrice%> CAD </b></h5></tr>
 
-   <!-- <% if(product.sale_price < product.productPrice )%>
-   <tr>
-      <td><h4><b><strike> $<%=  product.productPrice%> CAD </strike></b></h4></td>
-      <td><h4><b> $<%=  product.sale_price%> CAD </b></h4></td>
-  </tr>
-   <% end %> -->
-
- <!-- <tr><p><%= product.productDescription %></p></tr> -->
+   <% if(product.productPrice > product.sale_price) %>
+      <tr><strike>$ <%= product.productPrice %> CAD</strike></tr>
+        <tr><h5><b>$ <%= product.sale_price  %> CAD</b></h5></tr>
+      </tr>
+   <% else %>
+      <tr><h5><b>$ <%= product.sale_price  %> CAD</b></h5></tr>
+   <% end %>
+ </br>
  <% end %>
-
 </table>

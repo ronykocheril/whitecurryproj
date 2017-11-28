@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products_all = Product.all.page(params[:page]).per(3)
+    @products_all = Product.all
     @categories_all = Category.all
   end
   def category
@@ -15,10 +15,11 @@ class ProductsController < ApplicationController
 
     keywords = "%" + params[:search_keywords] + "%";
     cat = "%" + params[:categories] + "%";
+
     if params[:categories] == ''
-      @found_products = Product.where("name LIKE ? OR productDescription LIKE ?", keywords, keywords)
+      @found_products = Product.where("name LIKE '#{keywords}' or productDescription LIKE '#{keywords}'")
     else
-      @found_products = Product.where("name LIKE ? OR productDescription LIKE ?", keywords, keywords).joins(:category).where("categories.id LIKE ?", cat)
+      @found_products = Product.where("category_id LIKE '#{cat}' and name LIKE '#{keywords}'")
     end
 
   end

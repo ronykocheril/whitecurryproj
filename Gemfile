@@ -61,3 +61,5 @@ gem 'kaminari'
 gem 'bootstrap-sass'
 
 gem 'carrierwave', '~> 1.0'
+
+gem 'bootstrap-sass'
