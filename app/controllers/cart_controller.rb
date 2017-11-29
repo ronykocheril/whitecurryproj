@@ -33,6 +33,42 @@ class CartController < ApplicationController
 
   end
 
+  def checkout
+    @categories_all = Category.all
+      @products_all = Product.all
+    @mycart = session[:zz]
+    @pass_sub = params[:sub]
+
+    if(user_signed_in?)
+      @curr_user = User.where('name LIKE ?', current_user.name)
+
+     @curr_user.each do |user|
+       @ppp = user.province_id
+     end
+
+     @curr_pro = Province.where('id LIKE ?', @ppp)
+
+     @curr_pro.each do |province|
+       @ggst = province.gst
+       @ppst = province.pst
+     end
+
+     @you_ggst = @pass_sub.to_f * @ggst.to_f
+     @you_ggst.to_f
+
+     @you_ppst = @pass_sub.to_f * @ppst.to_f
+     @you_ppst.to_f
+
+     @grandtot = @you_ggst + @you_ppst + @pass_sub.to_f
+     @grandtot.to_f
+
+
+
+    else
+      redirect_to user_session_path
+    end
+  end
+
   def destroy
     @categories_all = Category.all
     @products_all = Product.all

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
  protected
 
  def configure_permitted_parameters
-   devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :userLastName, :email, :userAddress1, :userAddress2, :userCity, :userProvince, :userPostal, :userPhone ])
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :userLastName, :email, :userAddress1, :userAddress2, :userCity, :userPostal, :province_id])
  end
 
   # def current_cart

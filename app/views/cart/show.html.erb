@@ -1,3 +1,6 @@
+<%= render partial: 'shared/headerpart' %>
+</br>
+</br>
 <h2>Your Cart </h2>
 <table>
 
@@ -26,8 +29,19 @@
     <% end %>
   <% end %>
   <tr>Total : $<%=total %> CAD</tr>
-  <%=  button_to 'Proceed to checkout' %>
+
+
+  <%= form_tag checkout_path, method: 'get' do %>
+
+  <input id="sub" name= "sub" value= '<%=total%>'/>
+  <!-- <%=  button_to 'Proceed to checkout', {:controller => "cart", :action => "checkout"}, :method => :get %> -->
+  <%= submit_tag "Proceed to checkout" %>
+
+  <% end %>
+
   <% end %>
 
 
 </table>
+
+<%= render partial: 'shared/footer' %>

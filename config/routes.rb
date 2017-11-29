@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'charges/create'
 
+  get 'cart/checkout', to: 'cart#checkout', as: 'checkout'
+
   get '/category/:id', to: "products#category", as: 'category', number: /\d+/
   get '/all', to: "products#index"
 
