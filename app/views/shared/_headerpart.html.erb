@@ -50,6 +50,20 @@
 
 
     </div>
+    <% if(user_signed_in?) %>
+    <li class="nav-item">
+     <li style="color:#ffffff">Hi  <%= current_user.name %></li>
+    <a class = "nav-link" <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %> </a>
+    </li>
+    <% else %>
+    <li class="nav-item">
+    <a  style="color:#ffffff" <%= link_to "Log in", user_session_path %> </a>
+    </li>
+    <li class="nav-item">
+    <a  style="color:#ffffff" <%= link_to "Sign Up", new_user_registration_path %> </a>
+    </li>
+    <% end %>
+
 
   </div>
 </nav>

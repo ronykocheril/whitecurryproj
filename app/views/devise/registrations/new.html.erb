@@ -1,10 +1,51 @@
+<%= render partial: 'shared/simplifiedhead' %>
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :First_Name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Last_Name  %><br />
+    <%= f.text_field :userLastName, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Address_1 %><br />
+    <%= f.text_field :userAddress1, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Address_2 %><br />
+    <%= f.text_field :userAddress2, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :City %><br />
+    <%= f.text_field :userCity, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Province %><br />
+    <%= f.text_field :userProvince, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Postal %><br />
+    <%= f.text_field :userPostal, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Phone_Number %><br />
+    <%= f.text_field :userPhone, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -26,4 +67,7 @@
   </div>
 <% end %>
 
+
 <%= render "devise/shared/links" %>
+</br></br></br></br></br>
+<%= render partial: 'shared/footer' %>

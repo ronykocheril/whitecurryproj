@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
 
+  devise_for :users, skip: :all
+
+
+
 
   root to: 'products#index'
   get 'products/index'
