@@ -1,24 +1,29 @@
+  <%= render partial: 'shared/headerpart' %>
+</br></br>
 
-<table>
- <% @products_all.each do |product| %>
- <tr><h4><b><%= product.name%></b></h4></tr>
- <tr><p><%= image_tag product.productImage %></p></tr>
- <tr><h5><b> $<%= product.productPrice%> CAD</b></h5></tr>
+<div class="container">
+  <div class="row">
+    <% @products_all.each do |product| %>
+    <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+        <h4 class="card-header"><b><%= product.name%></b></h4>
+        <div class="card-body"><%= image_tag product.productImage %></div>
+        <div class="card-footer"> $<%= product.productPrice%> CAD</div>
 
- <% @quantity_array = [] %>
- <% i = 0 %>
+        <% @quantity_array = [] %>
+        <% i = 0 %>
 
- <% product.productStockQuantity.times { @quantity_array << i+=1} %>
+        <% product.productStockQuantity.times { @quantity_array << i+=1} %>
 
- <%= form_tag cart_path(id: product.id), method: 'post' do %>
+        <%= form_tag cart_path(id: product.id), method: 'post' do %>
 
-    <%= select_tag "quantity", options_for_select(@quantity_array) %>
-    <%= submit_tag "Add to cart" %>
+           <%= select_tag "quantity", options_for_select(@quantity_array) %>
+           <%= submit_tag "Add to cart" %>
+         </div>
+      </div>
+        <% end %>
 
-  <% end %>
-
- <% end %>
-
-
-
-</table>
+    <% end %>
+  </div>
+</div>
+<%= render partial: 'shared/footer' %>
