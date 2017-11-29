@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'charges/new'
+
+  get 'charges/create'
+
   get '/category/:id', to: "products#category", as: 'category', number: /\d+/
   get '/all', to: "products#index"
 
