@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   post '/cart/destroy/:id', to: 'cart#destroy', as: 'destroy'
 
+  resources :charges, only: [:new, :create]
+
 
   root to: 'products#index'
   get 'products/index'
